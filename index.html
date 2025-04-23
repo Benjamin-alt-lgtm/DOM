@@ -1,12 +1,30 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-
-    </style>
     <title>personalDetails</title>
+    <style>
+        body{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: block;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            min-height: 100vh;
+            background-color: f0f0f0;
+        }
+        #main-container, #section{
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: centre;
+            max-width: 600px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <div id="main-container"></div>
@@ -78,5 +96,100 @@
     </script>
 
 
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Details</title>
+    <!-- Include Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center min-h-screen bg-gray-100">
+    <div id="main-container" class="bg-white p-6 m-5 rounded-lg shadow-lg text-center max-w-2xl w-full"></div>
+    <div id="section" class="bg-white p-6 m-5 rounded-lg shadow-lg text-center max-w-2xl w-full"></div>
+    <div id="button" class = "bg-red px-4 py-2 rounded-md"></div>
+
+    <script>
+        // CREATING CONTENT FOR MAIN CONTAINER
+        const mainContainer = document.getElementById('main-container');
+        
+        // Create heading
+        const heading = document.createElement('h1');
+        heading.innerText = 'EHINJU BENJAMIN';
+        heading.className = 'text-3xl font-bold text-gray-800 mb-4';
+        mainContainer.appendChild(heading);
+
+        // Create paragraph
+        const paragraph = document.createElement('p');
+        paragraph.innerText = 'I am a serving corper in Blockfuse Labs currently learning JavaScript and web development with the future plans of going into Blockchain Development';
+        paragraph.className = 'text-gray-600 mb-4';
+        mainContainer.appendChild(paragraph);
+
+        // Create list of details
+        const detailedList = document.createElement('ul');
+        detailedList.className = 'list-none';
+        let details = [
+            'A serving corper with BlockfuseLabs',
+            'Community Manager',
+            'Community Moderator',
+            'Crypto Trader',
+            'Expert in Html & Tailwind CSS with Javascript in view',
+            'Lover of cars and Wristwatches'
+        ];
+
+        details.forEach(detail => {
+            let list = document.createElement('li');
+            list.innerText = detail;
+            list.className = 'text-gray-700 my-2';
+            detailedList.appendChild(list);
+        });
+        mainContainer.appendChild(detailedList);
+
+        // CREATING CONTENT FOR SECTION
+        const section = document.getElementById('section');
+        
+        // Create section heading
+        const sectionHeading = document.createElement('h1');
+        sectionHeading.innerText = 'Hobbies';
+        sectionHeading.className = 'text-3xl font-bold text-gray-800 mb-4';
+        section.appendChild(sectionHeading);
+
+        // Create list of hobbies
+        const hobbyList = document.createElement('ul');
+        hobbyList.className = 'list-none';
+        let hobbies = [
+            'Driving fast cars',
+            'Collecting wristwatches',
+            'Learning new technologies',
+            'Trading cryptocurrencies'
+        ];
+
+        hobbies.forEach(hobby => {
+            let list = document.createElement('li');
+            list.innerText = hobby;
+            list.className = 'text-gray-700 my-2';
+            hobbyList.appendChild(list);
+        });
+        section.appendChild(hobbyList);
+
+        //CREATING A BUTTON
+        let button = document.createElement('button')
+        button.innerText = 'Fun Fact'
+        button.className =  'mt-4 bg-blue-500 px-5 py-1 rounded-md hover:bg-red-400'
+        section.appendChild(button)
+
+        // BUTTON FUNCTIONALITY
+        button.addEventListener('click', () =>{
+            let funFact = document.createElement('p')
+            funFact.innerText = 'Fun Fact!: I love eveything good as well as the root of all Evil'
+            funFact.className = 'text-gray-500 mt-2'
+            sectionHeading.appendChild(funFact)
+            button.disabled = true
+        })
+    </script>
 </body>
 </html>
