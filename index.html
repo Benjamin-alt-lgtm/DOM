@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+    </style>
+    <title>personalDetails</title>
+</head>
+<body>
+    <div id="main-container"></div>
+    <div id = "section"></div>
+    <script>
+        // CREATING A H1 ELEMENT
+        const mainContainer = document.getElementById('main-container')
+        let heading = document.createElement('h1');
+        heading.innerText = 'EHINJU BENJAMIN'
+        mainContainer.appendChild(heading)
+
+        // CREATING A PARAGRAH
+        const paragraph = document.createElement('p')
+        paragraph.innerText = 'I am a servicing corper in Blockfuse Labs currently learning JavaScript and web development with the future plans of going into Blockchain Development'
+        mainContainer.appendChild(paragraph)
+
+        // CREATING LIST OF ITEMS
+        const detailedList = document.createElement('ul');
+        let details = [
+            'A serving corper with BlockfuseLabs',
+            'Community Manager',
+            'Communuity Moderator',
+            'Crypto Trader',
+            'Expert in Html & Tailwind CSS with Javascrip in view',
+            'Lover of cars and Wristwatches'
+        ]
+
+        details.forEach(detail =>{
+            let list = document.createElement('li')
+            list.innerText = detail
+            detailedList.appendChild(list)
+        })
+        mainContainer.appendChild(detailedList)
+
+        // ADDING A NEW DIV CALLED SECTION
+        const section = document.getElementById('section')
+        const sectionHeading = document.createElement('h2')
+        sectionHeading.innerText = 'Hobbies'
+        section.appendChild(sectionHeading)
+
+        //CREATING LIST OF ITEMS FOR HOBBIES
+        const listOfHobbies = document.createElement('ul')
+        const hobbies =[
+            'Driving fast cars',
+            'Collecting wristwatches',
+            'Learning new technologies',
+            'Trading cryptocurrencies'
+        ]
+
+        hobbies.forEach(hobby =>{
+            let hobbies = document.createElement('li')
+            hobbies.innerText = hobby
+            listOfHobbies.appendChild(hobbies)
+        })
+        sectionHeading.appendChild(listOfHobbies)
+        
+        //CREATING A BUTTON
+        let button = document.createElement('button')
+        button.innerText = 'Fun Fact'
+        section.appendChild(button)
+
+        // BUTTON FUNCTIONALITY
+        button.addEventListener('click', () =>{
+            let funFact = document.createElement('p')
+            funFact.innerText = 'Fun Fact!: I love eveything good as well as the root of all Evil'
+            sectionHeading.appendChild(funFact)
+            button.disabled = true
+        })
+    </script>
+
+
+</body>
+</html>
